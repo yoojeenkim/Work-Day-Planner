@@ -1,15 +1,21 @@
+//variables defined
 var time = moment();
 var saveBtn = $(".saveBtn");
 
+//displays current date formatted
 $("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 
-function startScheduler() {
-
+//function that runs on initial start
+function init() {
+    //for each time block class run this function
     $(".time-block").each(function () {
+        //set variable id to this specific time-block associated id
         var id = $(this).attr("id");
+        //set variable schedule to whatever was in storage under previously specified id
         var schedule = localStorage.getItem(id);
 
         if (schedule !== null) {
+            //this time block's children class schedule will contain the value of whatever was pulled from the local storage under id
             $(this).children(".schedule").val(schedule);
         }
     });
@@ -18,15 +24,13 @@ function startScheduler() {
 function pastPresentFuture() {
     hour = time.hours();
     $(".time-block").each(function () {
-        var thisHour = parseInt($(this).attr("id"));
+        var currentHour = parseInt($(this).attr("id"));
 
-        if (thisHour > hour) {
-            $(this).addClass("future")
-        }
-        else if (thisHour === hour) {
+        if (currentHour > hour) {
+            $(this).addClass("future");
+        } else if (currentHour === hour) {
             $(this).addClass("present");
-        }
-        else {
+        } else {
             $(this).addClass("past");
         }
     })
@@ -39,5 +43,5 @@ saveBtn.on("click", function () {
     localStorage.setItem(time, schedule);
 });
 
-startScheduler();
+init();
 pastPresentFuture();
