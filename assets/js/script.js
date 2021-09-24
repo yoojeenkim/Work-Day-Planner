@@ -1,16 +1,7 @@
 var time = moment();
-var hourNine = $("#9");
-var hourTen = $("#10");
-var hourEleven = $("#11");
-var hourTwelve = $("#12");
-var hourThirteen = $("#13");
-var hourFourteen = $("#14");
-var hourFifteen = $("#15");
-var hourSixteen = $("#16");
-var hourSeventeen = $("#17");
 var saveBtn = $(".saveBtn");
 
-$("#currentDay").text(moment().format('MMMM Do, YYYY'));
+$("#currentDay").text(moment().format("dddd, MMMM Do YYYY"));
 
 function startScheduler() {
 
@@ -21,23 +12,16 @@ function startScheduler() {
         if (schedule !== null) {
             $(this).children(".schedule").val(schedule);
         }
-    })
+    });
 }
-
-saveBtn.on("click", function() {
-    var time = $(this).parent().attr("id");
-    var schedule = $(this).siblings(".schedule").val();
-
-    localStorage.setItem(time,schedule);
-});
 
 function pastPresentFuture() {
     hour = time.hours();
-    $(".time-block").each(function() {
+    $(".time-block").each(function () {
         var thisHour = parseInt($(this).attr("id"));
 
         if (thisHour > hour) {
-            $(this).addClass("future");
+            $(this).addClass("future")
         }
         else if (thisHour === hour) {
             $(this).addClass("present");
@@ -47,6 +31,13 @@ function pastPresentFuture() {
         }
     })
 }
+
+saveBtn.on("click", function () {
+    var time = $(".saveBtn").parent().attr("id");
+    var schedule = $(".saveBtn").siblings(".schedule").val();
+
+    localStorage.setItem(time, schedule);
+});
 
 startScheduler();
 pastPresentFuture();
