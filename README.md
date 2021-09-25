@@ -15,3 +15,7 @@ WHEN I click into a timeblock, then I can enter an event
 [Bootstrap Documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
 
 [Jquery Documentation](https://api.jquery.com/)
+
+https://github.com/yoojeenkim/Work-Day-Planner
+
+https://yoojeenkim.github.io/Work-Day-Planner/
