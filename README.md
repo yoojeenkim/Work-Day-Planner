@@ -1,7 +1,17 @@
 # Work-Day-Planner
 
-https://momentjs.com/docs
+## Function
+I am using a daily planner to create a schedule and when I open the planner, the current day is displayed at the top of the calendar.
+WHEN I scroll down, I am presented with timeblocks for standard business hours.
+WHEN I view the timeblocks for that day, then each timeblock is color coded to indicate whether it is in the past, present, or future.
+WHEN I click into a timeblock, then I can enter an event
 
-https://getbootstrap.com/docs/5.1/getting-started/introduction/
+## Demonstration
+![The web page shows a user's planner.](./assets/images/download.png)
 
-https://api.jquery.com/
+## Resources
+[Moments.js Documentation](https://momentjs.com/docs)
+
+[Bootstrap Documentation](https://getbootstrap.com/docs/5.1/getting-started/introduction/)
+
+[Jquery Documentation](https://api.jquery.com/)
