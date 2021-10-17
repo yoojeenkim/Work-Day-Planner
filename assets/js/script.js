@@ -42,24 +42,12 @@ function pastPresentFuture() {
 //waits for click on any save button class and runs function
 saveBtn.on("click", function () {
     //grabs the id from parent attribute
-    var time = $(".saveBtn").parent().attr("id");
+    var time = $(this).parent().attr("id");
     //grabs the value of sibling class .schedule
-    var schedule = $(".saveBtn").siblings(".schedule").val();
+    var schedule = $(this).siblings(".schedule").val();
 
     localStorage.setItem(time, schedule);
 });
 
 init();
 pastPresentFuture();
-
-// in class exercise
-// function avgNumber (arr) {
-//     var totalNum = 0;
-
-//     for (i=0; i < arr.length; i++) {
-//         totalNum += arr[i];
-//     } 
-//     return totalNum/arr.length
-
-// }
-// console.log(avgNumber([1,4,7]));
